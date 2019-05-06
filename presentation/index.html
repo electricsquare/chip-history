@@ -1,0 +1,334 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>An Introduction to Machine Learning and Neural Networks</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+<section>
+	<h2>A brief and quick history of chip design</h2>
+	<h3>Tom Read Cutting</h3>
+	<p><a href="https://github.com/moosichu/hardware-architectures" target="_blank">Notes and Repository</a></p>
+	<aside class="notes">
+		Some notes are here.
+	</aside>
+</section>
+<section>
+	<h3>We will cover:</h3>
+	<ol>
+		<li>The physics layer.</li>
+		<li>The fetch-execute cycle and Von Neumann architecture.</li>
+		<li>Moore's law.</li>
+		<li>A brief (and incomplete) history of CPU design.</li>
+		<li>Implications for you.</li>
+	</ol>
+</section>
+<section>
+	<h2>NOTE: Things will move quickly! (Still may not be able to cover everything).</h2>
+	<h3>Do not hesitate to interrupt and ask questions</h3>
+</section>
+<section>
+	<h3>What is a computer chip?</h3>
+	<p>
+
+		A piece of material made with silicon that consists of transistors enabling computations to be
+		performed when provided with an electric current and inputs (as of 2019).
+
+	</p>
+</section>
+
+<section>
+	<section>
+		<h3>The physics and upwards</h3>
+	</section>
+	<section>
+		<h3>How does that work?</h3>
+		<p>TODO: describe silicon DOPING</p>
+	</section>
+
+	<section>
+		<h3>Making a transistor</h3>
+		<p>TODO: describe a transistor design</p>
+	</section>
+
+	<section>
+		<h3>Creating a flip-flop</h3>
+		<p>TODO: describe the creation of a flip-flop</p>
+	</section>
+
+	<section>
+		<h3>Designing a logic gate</h3>
+		<p>TODO: describe a simple logic gate</p>
+	</section>
+
+	<section>
+		<h3>A simple machine</h3>
+		<p>Show a simple circuit design of a chip that can do basic calculations</p>
+	</section>
+
+	<section>
+		<h3>Not covered</h3>
+		<ul>
+			<li>Clock cycles, how transistors etched, etc. (TODO)</li>
+		</ul>
+		<p>NOTE: I'm assuming you know what a clock cycle is, should I cover it?</p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h3>What are we aiming for?</h3>
+	</section>
+
+	<section>
+		<h3>The fetch-execute cycle: TODO</h3>
+	</section>
+
+	<section>
+		<h3>The von neumann things TODO:</h3>
+	</section>
+
+	<section>
+		<h3>A note on alternatives:</h3>
+		<p> TODO: Harvard architecture</p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h3>What allows chips to improve?</h3>
+	</section>
+	<section>
+		<h3>In two words: Moore's Law</h3>
+	</section>
+	<section>
+		<h3>
+			What is Moore's law?
+		</h3>
+		<p>TODO: DELAYED REVEAL: "TODO: QUOTE"</p>
+		<p>NOTE: It's not "CPU speed with increase by X amount"</p>
+	</section>
+	<section>
+		<h3>ASIDE: Moore's Law is not a 'law'</h3>
+		<p>Heavy debates about it being a self-fulfilling prophecy.</p>
+	</section>
+	<section>
+		<h3>Why are speed and transistor density so easily confused?</h3>
+		<ul>
+			<li>TODO: graph DATA, CPU speed and die density have historically been well-correlated</li>
+			<li>We take it as a given, but why?</li>
+			<li>What is CPU speed anyway? Are they just clock cycles?</li>
+			<li>What about multi-core CPUs?</li>
+			<li>What about the instructions themselves?</li>
+		</ul>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h3>Designing an old Von-Neumann CPU</h3>
+	</section>
+	<section>
+		<h3>What are our constraints?</h3>
+		<ul>
+			<li>Low transistor density.</li>
+			<li>Low amount of memory.</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Implication of constraints</h3>
+		<ul>
+			<li>Distance between transistors high (increased time of information transition) -> low clock frequencies.</li>
+		</ul>
+	</section>
+	<section>
+	<h3>The CISC (Complex TODO) CPU</h3>
+	<ul>
+		<li>Many, complicated instructions.</li>
+		<li>Variable length encoding.</li>
+		<li>Simple(r) chip design.</li>
+		<li>Single-Core.</li>
+		<li>Always-addressable pool of memory</li>
+	</ul>
+	<aside class="notes">Why do we want this? What could the downsides be? Why do the constraints allow us to do this?</aside>
+	</section>
+</section>
+<section>
+	<section><h3>Evolving CPUs</h3><p>A tale of new possibilities and evolving constraints</p></section>
+	<section>
+		<h3>Three big stories:</h3>
+		<ul>
+			<li>Moore's Law</li>
+			<li>Memory Size</li>
+			<li>The Operating System behemoth</li>
+		</ul>
+	</section>
+	<section>
+		<h3>How do the constraints change?</h3>
+		<ul>
+			<li>Higher transistor density.</li>
+			<li>More heat generation.</li>
+			<li>Multitasking desired.</li>
+		</ul>
+	</section>
+	<section>
+		<h3>Brief overview OS support</h3>
+		<ul>
+			<li>Virtual paging.</li>
+			<li>Time-slicing.</li>
+			<li>Privileged execution.</li>
+			<li>Generic BUSes.</li>
+		</ul>
+		<p>We can cover these in depth another time... (TODO: familiarise myself with topics)</p>
+	</section>
+	<section>
+		<h3>Now onto the good stuff...</h3>
+		<ol>
+			<li>RISC architectures</li>
+			<li>Register-file support</li>
+			<li>Pipe-lining</li>
+			<li>Pre-fetching</li>
+			<li>Specialisation</li>
+			<li>Branch prediction</li>
+			<li>Caching</li>
+			<li>Multi-core support</li>
+		</ol>
+		<p>Admittedly a lot to cover! So brief explanations of how they work and analyses of the tradeoffs they make.</p>
+	</section>
+</section>
+<section>
+	<section>
+		<h3>RISC (TODO)</h3>
+	</section>
+	<section><h3>RISC tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Register-file support (TODO)</h3>
+	</section>
+	<section><h3>Register-file support tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Pipe-lining (TODO)</h3>
+	</section>
+	<section><h3>Pipe-lining tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Pre-fetching (TODO)</h3>
+	</section>
+	<section><h3>Pre-fetching tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Specialisation (TODO)</h3>
+	</section>
+	<section><h3>Specialisation tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Branch prediction (TODO)</h3>
+	</section>
+	<section><h3>Branch prediction tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Caching (TODO)</h3>
+	</section>
+	<section><h3>Caching tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+		<h3>Multi-core support (TODO)</h3>
+	</section>
+	<section><h3>Multi-core support tradeoffs TODO</h3></section>
+</section>
+<section>
+	<section>
+	<h3>Bringing it all together, we have covered:</h3>
+	<ol>
+		<li>The physics layer.</li>
+		<li>The fetch-execute cycle and Von Neumann architecture.</li>
+		<li>Moore's law.</li>
+		<li>A brief (and incomplete) history of CPU design.</li>
+		<li>Implications for you? TODO: fade-in</li>
+	</ol>
+	</section>
+	<section>
+		<h3>Why this is important (1):</h3>
+		<p>The design of hardware has a *massive* effect on the software that runs on it!</p>
+		<p>Increased design complexity has massively increased the importance, prevalence and necessity of software abstractions.</p>
+	</section>
+	<section>
+	<h3>Why this is important (2):</h3>
+	<p>Yet, almost paradoxically, complex designs means that subtle changes can have massive effects on functionality and performance!
+	</p>
+	<p>However, powerful hardware can mitigate the performance impact of application in isolation.</p>
+	<p>Yet, we are asking our computers to multi-task more-and-more every day! The sum-total can still be quite bad!</p>
+	</section>
+	<section>
+		<h3>Final points</h3>
+		<ol>
+		<li>I hope you found this interesting.</li>
+		<li>Hardware design is important.</li>
+		<li>Multi-core is here to stay, we need to learn how to use it.</li>
+		<li>Memory access-patterns are a big deal, be cache-friendly!</li>
+		</ol>
+	</section>
+</section>
+<section>
+	<h3>Future hardware possibilities</h3>
+	<ol>
+		<li>Any topic here, but in depth.</li>
+		<li>Cache design.</li>
+		<li>Cache coherency.</li>
+		<li>SoC design.</li>
+		<li>GPU design.</li>
+		<li>OS support.</li>
+	</ol>
+</section>
+<section>
+	<h3>Thank you! Any questions?</h3>
+</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
