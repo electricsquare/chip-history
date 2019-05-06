@@ -35,7 +35,6 @@
 <section>
 	<h3>We will cover:</h3>
 	<ol>
-		<li>The physics layer.</li>
 		<li>The fetch-execute cycle and Von Neumann architecture.</li>
 		<li>Moore's law.</li>
 		<li>A brief (and incomplete) history of CPU design.</li>
@@ -43,8 +42,9 @@
 	</ol>
 </section>
 <section>
-	<h2>NOTE: Things will move quickly! (Still may not be able to cover everything).</h2>
-	<h3>Do not hesitate to interrupt and ask questions</h3>
+	<p>NOTE: Things will move quickly! (Still may not be able to cover everything).</p>
+	<p>Do not hesitate to interrupt and ask questions</p>
+	<p class="fragment">Very dynamic, will be asking you questions as well!</p>
 </section>
 <section>
 	<h3>What is a computer chip?</h3>
@@ -58,58 +58,29 @@
 
 <section>
 	<section>
-		<h3>The physics and upwards</h3>
-	</section>
-	<section>
-		<h3>How does that work?</h3>
-		<p>TODO: describe silicon DOPING</p>
-	</section>
-
-	<section>
-		<h3>Making a transistor</h3>
-		<p>TODO: describe a transistor design</p>
-	</section>
-
-	<section>
-		<h3>Creating a flip-flop</h3>
-		<p>TODO: describe the creation of a flip-flop</p>
-	</section>
-
-	<section>
-		<h3>Designing a logic gate</h3>
-		<p>TODO: describe a simple logic gate</p>
-	</section>
-
-	<section>
-		<h3>A simple machine</h3>
-		<p>Show a simple circuit design of a chip that can do basic calculations</p>
-	</section>
-
-	<section>
-		<h3>Not covered</h3>
-		<ul>
-			<li>Clock cycles, how transistors etched, etc. (TODO)</li>
-		</ul>
-		<p>NOTE: I'm assuming you know what a clock cycle is, should I cover it?</p>
-	</section>
-</section>
-
-<section>
-	<section>
 		<h3>What are we aiming for?</h3>
 	</section>
 
 	<section>
-		<h3>The fetch-execute cycle: TODO</h3>
+		<h3>The fetch-execute cycle</h3>
+		<ol>
+			<li>Grab instruction at PC address.</li>
+			<li>Decode instruction.</li>
+			<li>Execute instruction.</li>
+			<li class="fragment">Repeat.</li>
+		</ol>
 	</section>
 
 	<section>
-		<h3>The von neumann things TODO:</h3>
+		<h3>The Von Neumann Architecture</h3>
+		<img width="600" src="img/VonNeumann.png" alt="Diagram showing the Von Neumann architecture" />
+		<p>Most chips use the Von Neumann architecture, so this is the high level mental model we will use.</p>
 	</section>
 
 	<section>
-		<h3>A note on alternatives:</h3>
-		<p> TODO: Harvard architecture</p>
+		<h3>A note on alternatives, the Harvard Architecture:</h3>
+		<img width="550" src="img/Harvard.png" alt="Diagram showing the Harvard architecture" />
+		<p>Used in some custom chips, can you see the benefits of this? The downsides? We will come back to this.</p>
 	</section>
 </section>
 
@@ -124,21 +95,21 @@
 		<h3>
 			What is Moore's law?
 		</h3>
-		<p>TODO: DELAYED REVEAL: "TODO: QUOTE"</p>
-		<p>NOTE: It's not "CPU speed with increase by X amount"</p>
+		<img width="500" src="img/MooreLaw.png" alt="A diagram of moore's law in the real world"/>
+		<p>Gordon Moore, CEO of Intel: "The complexity for minimum component costs has increased at a rate of roughly a factor of two per year."</p>
 	</section>
 	<section>
-		<h3>ASIDE: Moore's Law is not a 'law'</h3>
+		<h3>ASIDE: Moore's Law is not a 'real' law</h3>
 		<p>Heavy debates about it being a self-fulfilling prophecy.</p>
 	</section>
 	<section>
-		<h3>Why are speed and transistor density so easily confused?</h3>
+		<h3>Why does this allow for faster chips?</h3>
 		<ul>
-			<li>TODO: graph DATA, CPU speed and die density have historically been well-correlated</li>
 			<li>We take it as a given, but why?</li>
 			<li>What is CPU speed anyway? Are they just clock cycles?</li>
 			<li>What about multi-core CPUs?</li>
 			<li>What about the instructions themselves?</li>
+			<li>This is where chip design comes in.</li>
 		</ul>
 	</section>
 </section>
@@ -161,14 +132,16 @@
 		</ul>
 	</section>
 	<section>
-	<h3>The CISC (Complex TODO) CPU</h3>
+	<h3>The CISC CPU</h3>
+	<p>Complex instruction set computer</p>
 	<ul>
 		<li>Many, complicated instructions.</li>
 		<li>Variable length encoding.</li>
 		<li>Simple(r) chip design.</li>
 		<li>Single-Core.</li>
-		<li>Always-addressable pool of memory</li>
+		<li>Always-addressable pool of memory.</li>
 	</ul>
+	<p class="fragment">What trade-offs are we making here?</p>
 	<aside class="notes">Why do we want this? What could the downsides be? Why do the constraints allow us to do this?</aside>
 	</section>
 </section>
@@ -198,16 +171,14 @@
 			<li>Privileged execution.</li>
 			<li>Generic BUSes.</li>
 		</ul>
-		<p>We can cover these in depth another time... (TODO: familiarise myself with topics)</p>
+		<p>We can cover these in depth another time...</p>
 	</section>
 	<section>
 		<h3>Now onto the good stuff...</h3>
 		<ol>
+			<li>Instruction pipelining</li>
 			<li>RISC architectures</li>
-			<li>Register-file support</li>
-			<li>Pipe-lining</li>
-			<li>Pre-fetching</li>
-			<li>Specialisation</li>
+			<li>Register file support</li>
 			<li>Branch prediction</li>
 			<li>Caching</li>
 			<li>Multi-core support</li>
@@ -217,51 +188,138 @@
 </section>
 <section>
 	<section>
-		<h3>RISC (TODO)</h3>
+		<h3>Instruction pipelining</h3>
+		<img width="400" src="img/pipeline.png" alt="A diagram showing pipelining"/>
+		<p>Pipelining is a great way to improve clock speeds, why?</p>
 	</section>
-	<section><h3>RISC tradeoffs TODO</h3></section>
+	<section>
+		<h3>Instruction pipelining tradeoffs:</h3>
+		<ul class="fragment">
+			<li>✔️ Less to do each cycle: shorter cycles.</li>
+			<li>❌ Are limited by the longest stage of the pipeline.</li>
+			<li>❌ Higher Frequencies = More Heat.</li>
+			<li>❌ What about branching?</li>
+			<li>❌ What if a stage takes +1 cycles?</li>
+			<li>❌ More silicon required.</li>
+		</ul>
+		<p class="fragment">All the other techniques essentially exist to help mitigate the effects of pipelining, although it is still an important part of CPU architectures today.</p>
+	</section>
 </section>
 <section>
 	<section>
-		<h3>Register-file support (TODO)</h3>
+		<h3>Register file support</h3>
+		<p>Have on-chip memory for storing data which instructions can refer to.</p>
 	</section>
-	<section><h3>Register-file support tradeoffs TODO</h3></section>
+	<section>
+		<h3>Register file support tradeoffs</h3>
+		<ul class="fragment">
+			<li>✔️ Shorter instructions if operating on same data multiple times.</li>
+			<li>✔️ Don't have to fetch/store in main memory every instruction.</li>
+			<li>❌ Need more silicon to for data storage.</li>
+			<li>❌ Hard to optimise register usage correctly.</li>
+			<li>❌ Transparent to programmer: new registers won't improve old programs.</li>
+		</ul>
+		<p class="fragment">Modern CPUs can actually use <em>register renaming</em> to have virtual registers.</p>
+	</section>
 </section>
 <section>
 	<section>
-		<h3>Pipe-lining (TODO)</h3>
+		<h3>RISC Architecture</h3>
+		<p>Reduced instruction set computer</p>
+		<p>The goal is to instructions simpler, and therefore easier to decode.</p>
 	</section>
-	<section><h3>Pipe-lining tradeoffs TODO</h3></section>
+	<section>
+		<h3>RISC tradeoffs</h3>
+		<ul class="fragment">
+			<li>✔️ Fewer cycles per instruction = shorter pipelines.</li>
+			<li>❌ More memory for instructions.</li>
+			<li>❌ Can no longer have specialised hardware for specialised instructions.</li>
+			<li>❌ Must load data into register files before use.</li>
+		</ul>
+	</section>
 </section>
 <section>
 	<section>
-		<h3>Pre-fetching (TODO)</h3>
+		<h3>Branch prediction</h3>
+		<p>The goal is predict which branch the code will take, reducing the changes of a pipeline "flush".</p>
 	</section>
-	<section><h3>Pre-fetching tradeoffs TODO</h3></section>
+	<section>
+		<h3>How does it work at a high level?</h3>
+		<p>Program Counter (PC) indexes a table of data containing historical information about the execution.</p>
+		<img width="600" src="img/branchpred.png" alt="diagram of branch prediction" />
+		<p>Can't be complex!</p>
+	</section>
+	<section>
+		<h3>Types of branch prediction</h3>
+		<ul>
+			<li>n-bit saturating counters.</li>
+			<li>Global branch prediction.</li>
+			<li>Tournament branch prediction.</li>
+			<li class="fragment">And many more!</li>
+		</ul>
+	</section>
+	<section><h3>Branch prediction tradeoffs</h3>
+		<ul class="fragment">
+			<li>✔️ Reduces chance of pipeline flush.</li>
+			<li>❌ Adds a lot of complexity.</li>
+			<li>❌ What if two PC's index same location in table? (Think hash table collision).</li>
+		</ul>
+	</section>
 </section>
 <section>
 	<section>
-		<h3>Specialisation (TODO)</h3>
+		<h3>Caching</h3>
+		<p>Problem: We are limited by the speed of light.</p>
+		<p>Clock cycles have gone up, memory access latency hasn't changed much.</p>
+		<p>DRAM Access is 240 cycles!</p>
 	</section>
-	<section><h3>Specialisation tradeoffs TODO</h3></section>
+	<section>
+		<h3>What does the cache bring?</h3>
+		<ol>
+			<li>Register File Access: 1 cycle</li>
+			<li>L1 CACHE hit: 4 cycles</li>
+			<li>L2 CACHE hit: 10 cycles</li>
+			<li>L3 CACHE hit: 40 cycles</li>
+			<li>DRAM Access: 240 cycles</li>
+		</ol>
+	</section>
+	<section>
+		<h3>In human terms...</h3>
+		<ol>
+			<li>Register File Access: 1 day</li>
+			<li>L1 CACHE hit: 4 days</li>
+			<li>L2 CACHE hit: ~one week</li>
+			<li>L3 CACHE hit: ~one month</li>
+			<li>DRAM Access: ~2/3rds of a year</li>
+		</ol>
+	</section>
+	<section>
+			<h3>On the L1 cache...</h3>
+			<p>L1 caches are often separated into separate 'instruction' and 'data' caches. What does this remind you of?</p>
+		</section>
+	<section><h3>Caching tradeoffs</h3>
+		<ul class="fragment">
+			<li>✔️ Reduce memory access cost</li>
+			<li>✔️ Invisible to programmer</li>
+			<li>❌ Invisible to programmer</li>
+			<li>❌ Very visible to programmer</li>
+		</ul></section>
 </section>
 <section>
 	<section>
-		<h3>Branch prediction (TODO)</h3>
+		<h3>Multi-core support</h3>
+		<p>Why not have multiple CPUs on the same chip?</p>
 	</section>
-	<section><h3>Branch prediction tradeoffs TODO</h3></section>
-</section>
-<section>
-	<section>
-		<h3>Caching (TODO)</h3>
-	</section>
-	<section><h3>Caching tradeoffs TODO</h3></section>
-</section>
-<section>
-	<section>
-		<h3>Multi-core support (TODO)</h3>
-	</section>
-	<section><h3>Multi-core support tradeoffs TODO</h3></section>
+	<section><h3>Multi-core support tradeoffs</h3>
+		<ul class="fragment">
+			<li>✔️ Lower clock speeds heat.</li>
+			<li>✔️ Simpler pipelines (and all the problems that come with them).</li>
+			<li>❌ Added complexity.</li>
+			<li>❌ Race conditions.</li>
+			<li>❌ Cache coherency.</li>
+			<li>❌ May need more I/O.</li>
+			<li>❌ Too many to count...</li>
+		</ul></section>
 </section>
 <section>
 	<section>
@@ -271,7 +329,7 @@
 		<li>The fetch-execute cycle and Von Neumann architecture.</li>
 		<li>Moore's law.</li>
 		<li>A brief (and incomplete) history of CPU design.</li>
-		<li>Implications for you? TODO: fade-in</li>
+		<li class="fragment">Implications for you?</li>
 	</ol>
 	</section>
 	<section>
@@ -297,7 +355,7 @@
 	</section>
 </section>
 <section>
-	<h3>Future hardware possibilities</h3>
+	<h3>Future hardware talk possibilities</h3>
 	<ol>
 		<li>Any topic here, but in depth.</li>
 		<li>Cache design.</li>
@@ -305,10 +363,12 @@
 		<li>SoC design.</li>
 		<li>GPU design.</li>
 		<li>OS support.</li>
+		<li>The physics of silicon chips.</li>
 	</ol>
 </section>
 <section>
 	<h3>Thank you! Any questions?</h3>
+	<p>Although shallow and brief, hope this gives you an idea about how CPUs can be designed and optimised.</p>
 </section>
 			</div>
 		</div>
@@ -332,3 +392,14 @@
 		</script>
 	</body>
 </html>
+
+<!--
+	Image references:
+	(TODO, add them properly)
+	Harvard Arch: https://en.wikipedia.org/wiki/Harvard_architecture#/media/File:Harvard_architecture.svg
+	VOn Neumann Arch: https://en.wikipedia.org/wiki/Von_Neumann_architecture#/media/File:Von_Neumann_Architecture.svg
+	Moore's Law: https://en.wikipedia.org/wiki/Moore%27s_law#/media/File:Moore%27s_Law_Transistor_Count_1971-2016.png
+	Pipeline: https://en.wikipedia.org/wiki/Instruction_pipelining#/media/File:Pipeline,_4_stage.svg
+	BRANCH PRED: https://en.wikipedia.org/wiki/File:Two-level_branch_prediction.svg#/media/File:Two-level_branch_prediction.svg
+	Cache Source: https://stackoverflow.com/questions/4087280/approximate-cost-to-access-various-caches-and-main-memory
+-->
