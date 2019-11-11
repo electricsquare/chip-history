@@ -4,6 +4,6 @@
 
 Brought to you by [Electric Square](https://www.electricsquare.com/).
 
-Created and Presented by [Tom Read Cutting](https://moosichu.github.io).
+Created and Presented by [Tom Read Cutting](https://moosichu.com).
 
 # [Presentation](https://electricsquare.github.io/chip-history)
