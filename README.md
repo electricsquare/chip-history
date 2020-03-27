@@ -1,4 +1,4 @@
-# A brief and quick history of chip design
+# The Evolution of Computer Chips: A Crash Course
 
 [![The logo of Electric Square Ltd.](presentation/img/ES-logo-and-wordmark.jpg)](https://www.electricsquare.com/)
 
